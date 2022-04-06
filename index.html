@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script>
+		const container = document.createElement('div');
+
+		document.body.appendChild(container);
+
+		container.setAttribute('id', 'container');
+
+		let i = 0;
+		do {
+			const div = document.createElement('div');
+			div.setAttribute('class', 'square');
+			container.appendChild(div);
+			i++;
+			console.log(`created square ${i}`);
+		} while (i < 256)
+
+		
+
+
+	</script>
+</html>
