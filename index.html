@@ -21,12 +21,22 @@
 			div.setAttribute('class', 'square');
 			container.appendChild(div);
 			i++;
-			// div.innerHTML = `${i}`;
 			console.log(`created square ${i}`);
 		} while (i < 256)
 
-		
-
-
+		const squares = document.querySelectorAll(".square");
+		squares.forEach(square => {
+			square.addEventListener("mousemove", () => {
+			square.setAttribute('style', 'background-color: blue');
+			console.log("mouse hover");
+			});
+		});
+/* 		squares.forEach(square => {
+			square.addEventListener("mouseleave", () => {
+			square.setAttribute('style', 'background-color: white');
+			console.log("mouse hover");
+			});
+		});
+ */
 	</script>
 </html>
