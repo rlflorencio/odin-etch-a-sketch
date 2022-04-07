@@ -5,38 +5,58 @@
 	</head>
 
 	<body>
+		<button id="btn">clear</button>
+		<div id="container"></div>
 
 	</body>
 
 	<script>
-		const container = document.createElement('div');
+		const container = document.getElementById("container");
 
-		document.body.appendChild(container);
-
-		container.setAttribute('id', 'container');
-
+		let n = 16;
 		let i = 0;
+		let counter = n * n;
+		let size = (960-n)/n;
 		do {
 			const div = document.createElement('div');
 			div.setAttribute('class', 'square');
 			container.appendChild(div);
 			i++;
-			console.log(`created square ${i}`);
-		} while (i < 256)
+		} while (i < counter)
 
 		const squares = document.querySelectorAll(".square");
+
 		squares.forEach(square => {
 			square.addEventListener("mousemove", () => {
 			square.setAttribute('style', 'background-color: blue');
 			console.log("mouse hover");
 			});
 		});
-/* 		squares.forEach(square => {
-			square.addEventListener("mouseleave", () => {
+		
+		const btn = document.querySelector("#btn");
+
+		btn.addEventListener("click", () => {
+			const squares = document.querySelectorAll(".square");
+			squares.forEach(square => {
 			square.setAttribute('style', 'background-color: white');
-			console.log("mouse hover");
 			});
+			console.log("clear");
 		});
- */
+
+		btn.addEventListener("click", () => {
+			let userInput = prompt("How many squares per side do you want on the grid?", "Max = 100");
+			let n = parseInt(userInput);
+			console.log(n);
+			
+			if (n <= 100) {
+				counter = n * n;
+				console.log(counter);
+				return counter
+			} else if (n > 100) {
+				alert("Maximum size is 100, try again.")
+			}
+		});
+
+
 	</script>
 </html>
