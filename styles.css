@@ -21,8 +21,6 @@ body{
 
 .square{
 	background-color: white;
-	width: 59px;
-	height: 59px;
 	flex-shrink: 2;
 }
 
